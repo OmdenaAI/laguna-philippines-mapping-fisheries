@@ -1,8 +1,4 @@
-# chapter-project-repository-template
-Use this Repository as a template for creating Local Chapter Repositories
-
-
-# [Chapter Challenge Name]
+# Mapping and Recommending Allocation of Fisheries to Increase Aquatic Production in The Philippines
 
 
 ## Contribution Guidelines
