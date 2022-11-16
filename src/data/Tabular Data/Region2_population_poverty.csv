@@ -1,0 +1,26 @@
+Region,Province,Year,Population,Land Area (sq. km),Population Density,Annual_Per_Capita_Poverty_Threshold_Php,Annual_Per_Capita_Food_Threshold_Urban_Php,Annual_Per_Capita_Food_Threshold_Rural_Php,Poverty_Incidence_Among_Families_Percent,Magnitude_of_PoorFamilies_000,Magnitude_of_PoorPopulation_000,Magnitude_of_SubsistencePoorFamilies_000,Magnitude_of_SubsistencePoorPopulation_000,Income_Gap_Percent,Poverty_Gap_Percent,Severity_of_Poverty_Percent
+Region II (Cagayan Valley),Batanes,2010,16604,203.22,81.7,,,,,,,,,,,
+Region II (Cagayan Valley),Cagayan,2010,1124773,9398.07,119.68,,,,,,,,,,,
+Region II (Cagayan Valley),Isabela,2010,1489645,13102.05,113.7,,,,,,,,,,,
+Region II (Cagayan Valley),Nueva Vizcaya,2010,421355,4813.88,87.53,,,,,,,,,,,
+Region II (Cagayan Valley),Quirino,2010,176786,2319.66,76.21,,,,,,,,,,,
+Region II (Cagayan Valley),Batanes,2015,17246,203.22,84.86,"31,422","23,070","21,942",10,0.39,2.49,0,0,0.2,0,0
+Region II (Cagayan Valley),Cagayan,2015,1199320,9398.07,127.61,"21,479","15,637","14,969",14,37.47,196.3,7.84,42.38,20.2,2.8,0.8
+Region II (Cagayan Valley),Isabela,2015,1593566,13102.05,121.63,"23,365","17,107","16,209",12.4,49.32,300.19,6.06,41.38,16.2,2,0.5
+Region II (Cagayan Valley),Nueva Vizcaya,2015,452287,4813.88,93.95,"23,250","16,950","16,090",10.5,9.6,57.47,2.89,19.42,19.9,2.1,0.7
+Region II (Cagayan Valley),Quirino,2015,188991,2319.66,81.47,"21,602","15,891","15,085",20.3,8.76,56.01,2.02,14.62,19.5,4,1.2
+Region II (Cagayan Valley),Batanes,2018,,203.22,,"37,540","27,715","26,129",6.5,0.33,1.68,0.07,0.37,18.5,1.2,0.3
+Region II (Cagayan Valley),Cagayan,2018,,9398.07,,"24,759","18,041","17,193",12.5,35.84,199.17,8.71,51.31,19,2.4,0.7
+Region II (Cagayan Valley),Isabela,2018,,13102.05,,"25,460","18,674","17,617",13.2,51.92,282.05,11.85,73.39,19.5,2.6,0.8
+Region II (Cagayan Valley),Nueva Vizcaya,2018,,4813.88,,"24,857","18,152","17,236",11.6,14.16,75.65,4.09,23.96,20.3,2.4,0.7
+Region II (Cagayan Valley),Quirino,2018,,2319.66,,"23,580","17,334","16,408",8.9,4.04,24.43,0.66,4.73,16.8,1.5,0.4
+Region II (Cagayan Valley),Batanes,2020,18831,203.22,92.66,,,,,,,,,,,
+Region II (Cagayan Valley),Cagayan,2020,1268603,9398.07,134.99,,,,,,,,,,,
+Region II (Cagayan Valley),Isabela,2020,1697050,13102.05,129.53,,,,,,,,,,,
+Region II (Cagayan Valley),Nueva Vizcaya,2020,497432,4813.88,103.33,,,,,,,,,,,
+Region II (Cagayan Valley),Quirino,2020,203828,2319.66,87.87,,,,,,,,,,,
+Region II (Cagayan Valley),Batanes,2021,,203.22,,"35,550","25,892","24,635",2.6,0.14,0.61,0.01,0.05,14.2,0.4,0.1
+Region II (Cagayan Valley),Cagayan,2021,,9398.07,,"26,954","19,824","18,755",7.3,21.85,129.91,3.68,24.31,18.1,1.3,0.4
+Region II (Cagayan Valley),Isabela,2021,,13102.05,,"29,452","21,572","20,222",15.9,65.96,344.78,16.48,94.68,21.4,3.4,1.1
+Region II (Cagayan Valley),Nueva Vizcaya,2021,,4813.88,,"25,514","18,754","17,740",10.8,14.23,74.91,3.81,21.82,21.3,2.3,0.8
+Region II (Cagayan Valley),Quirino,2021,,2319.66,,"27,060","20,068","18,872",6.2,2.91,18.12,0.4,2.57,15.6,1,0.2
