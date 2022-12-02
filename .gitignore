@@ -131,3 +131,5 @@ dmypy.json
 # Other folders
 ./models__
 models__
+./models 
+models
