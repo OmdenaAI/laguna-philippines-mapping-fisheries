@@ -1,28 +1,11 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
-import json
-import requests
-import geopandas as gpd
-import pandas as pd
 
 st.set_page_config(layout="wide")
 
 st.sidebar.title("About")
 
 st.title("Marker Cluster")
-
-provinces_url = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Shape%20File/provinces-region2.json'
-response = requests.get(provinces_url)
-provinces = response.json()
-
-coordinates = []
-for feature in provinces["features"]:
-    for geometry in feature["geometry"]["coordinates"]:
-        for coordinate in geometry:
-            coordinates.append(coordinate)
-flat_coordinates = [coord for coords in coordinates for coord in coords if type(coord) == list]
-# Convert the coordinates into a format that add_points_from_xy() can use
-coordinates_df = pd.DataFrame(flat_coordinates, columns=["lng", "lat"])
 
 with st.expander("See source code"):
     with st.echo():
