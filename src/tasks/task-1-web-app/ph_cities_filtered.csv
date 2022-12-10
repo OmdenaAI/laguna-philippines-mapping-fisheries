@@ -1,0 +1,54 @@
+city,lat,lng,country,iso2,admin_name,capital,population,population_proper
+Tuguegarao,17.6167,121.7167,Philippines,PH,Cagayan,admin,153502.0,153502.0
+Ilagan,17.1333,121.8833,Philippines,PH,Isabela,admin,145568.0,145568.0
+Santiago,16.6833,121.55,Philippines,PH,Santiago,admin,134830.0,134830.0
+Calabayan,16.7667,121.7833,Philippines,PH,Isabela,,129523.0,129523.0
+Baggao,17.8894,121.8709,Philippines,PH,Cagayan,,82782.0,82782.0
+Solana,17.65,121.6833,Philippines,PH,Cagayan,,82502.0,82502.0
+Echague,16.7,121.65,Philippines,PH,Isabela,,79094.0,79094.0
+Alicia,16.7787,121.6972,Philippines,PH,Isabela,,71504.0,71504.0
+Tumauini,17.2667,121.8,Philippines,PH,Isabela,,67650.0,67650.0
+Aparri,18.355,121.6419,Philippines,PH,Cagayan,,65649.0,65649.0
+San Mateo,16.8833,121.5833,Philippines,PH,Isabela,,64505.0,64505.0
+Roxas,17.1167,121.6167,Philippines,PH,Isabela,,61773.0,61773.0
+Tuao,17.7333,121.45,Philippines,PH,Cagayan,,61535.0,61535.0
+Bayombong,16.4833,121.15,Philippines,PH,Nueva Vizcaya,admin,61512.0,61512.0
+Solano,16.5239,121.1919,Philippines,PH,Nueva Vizcaya,,59517.0,59517.0
+Gattaran,18.0667,121.65,Philippines,PH,Cagayan,,56661.0,56661.0
+San Mariano,16.9833,122.0167,Philippines,PH,Isabela,,55370.0,55370.0
+Bambang,16.3825,121.11,Philippines,PH,Nueva Vizcaya,,53433.0,53433.0
+Ramon,16.7833,121.5333,Philippines,PH,Isabela,,52707.0,52707.0
+Diffun,16.6,121.4667,Philippines,PH,Quirino,,52569.0,52569.0
+Cabagan,17.4333,121.7667,Philippines,PH,Isabela,,50174.0,50174.0
+Peñablanca,17.6333,121.7833,Philippines,PH,Cagayan,,48584.0,48584.0
+Amulung,17.8387,121.7235,Philippines,PH,Cagayan,,47860.0,47860.0
+Jones,16.5583,121.7,Philippines,PH,Isabela,,45666.0,45666.0
+Lal-lo,18.2,121.6667,Philippines,PH,Cagayan,,44506.0,44506.0
+Angadanan,16.7571,121.7479,Philippines,PH,Isabela,,43061.0,43061.0
+Cordon,16.6667,121.45,Philippines,PH,Isabela,,42926.0,42926.0
+Cabatuan,16.9589,121.6692,Philippines,PH,Isabela,,39413.0,39413.0
+Lasam,18.0667,121.6,Philippines,PH,Cagayan,,39135.0,39135.0
+Gonzaga,18.2667,122.0,Philippines,PH,Cagayan,,38892.0,38892.0
+Alcala,17.9031,121.659,Philippines,PH,Cagayan,,38883.0,38883.0
+Maddela,16.35,121.7,Philippines,PH,Quirino,,38499.0,38499.0
+Kasibu,16.3167,121.2833,Philippines,PH,Nueva Vizcaya,,37705.0,37705.0
+Aritao,16.2973,121.0338,Philippines,PH,Nueva Vizcaya,,37225.0,37225.0
+Enrile,17.55,121.7,Philippines,PH,Cagayan,,35834.0,35834.0
+Bagabag,16.6044,121.2521,Philippines,PH,Nueva Vizcaya,,35501.0,35501.0
+Aurora,16.9918,121.6357,Philippines,PH,Isabela,,35017.0,35017.0
+Ballesteros,18.4,121.5167,Philippines,PH,Cagayan,,34299.0,34299.0
+Allacapan,18.227,121.5556,Philippines,PH,Cagayan,,33571.0,33571.0
+Santa Ana,18.4667,122.15,Philippines,PH,Cagayan,,32906.0,32906.0
+Abulug,18.4441,121.4576,Philippines,PH,Cagayan,,32497.0,32497.0
+Naguilian,17.0167,121.85,Philippines,PH,Isabela,,31902.0,31902.0
+San Manuel,17.0167,121.6333,Philippines,PH,Isabela,,31896.0,31896.0
+Cabarroguis,16.5833,121.5,Philippines,PH,Quirino,admin,30582.0,30582.0
+Mallig,17.2,121.6167,Philippines,PH,Isabela,,30459.0,30459.0
+Buguey,18.2882,121.8331,Philippines,PH,Cagayan,minor,30175.0,30175.0
+Claveria,18.6,121.0833,Philippines,PH,Cagayan,,29921.0,29921.0
+Gamu,17.05,121.8333,Philippines,PH,Isabela,,29904.0,29904.0
+Benito Soliven,16.9833,121.95,Philippines,PH,Isabela,,29624.0,29624.0
+Iguig,17.75,121.7333,Philippines,PH,Cagayan,,27862.0,27862.0
+Aglipay,16.4889,121.5874,Philippines,PH,Quirino,,27787.0,27787.0
+Dupax Del Norte,16.2864,121.0942,Philippines,PH,Nueva Vizcaya,,27514.0,27514.0
+Basco,20.45,121.9667,Philippines,PH,Batanes,admin,8579.0,8579.0
