@@ -27,9 +27,9 @@ coordinates_df = pd.DataFrame(flat_coordinates, columns=["lng", "lat"])
 with st.expander("See source code"):
     with st.echo():
 
-        m = leafmap.Map(center=[16.879721, 121.774017], zoom=8)
+        m = leafmap.Map(center=[17.879721, 121.774017], zoom=7)
         # cities = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Cities/ph_cities.csv'
-        cities = r"C:\Users\patrick\Documents\Omdena\Challenges\Laguna Local Chapter\laguna-philippines-mapping-fisheries\src\tasks\task-1-web-app\ph_cities_filtered.csv"
+        cities = "https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Cities/ph_cities_filtered.csv"
         regions = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/tasks/task-1-web-app/region_2_results_filtered.geojson'
 
         m.add_geojson(regions, layer_name='Cluster Map')
