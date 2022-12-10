@@ -16,9 +16,9 @@ with st.expander("See source code"):
 
         m = leafmap.Map(center=[16.879721, 121.774017], zoom=8)
         cities = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Cities/ph_cities.csv'
-        regions = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Results/region_2_results.geojson'
+        regions = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/tasks/task-1-web-app/region_2_results_filtered.geojson'
 
-        m.add_geojson(regions, layer_name='Thingy')
+        m.add_geojson(regions, layer_name='Cluster Map')
         m.add_points_from_xy(
             cities,
             x="lng",
@@ -29,18 +29,3 @@ with st.expander("See source code"):
             add_legend=True,
         )
 m.to_streamlit(height=700)
-
-geojson_url = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Results/region_2_results.geojson'
-response = requests.get(geojson_url)
-geojson_data = response.json()
-
-geojson_dict = json.loads(geojson_data)
-
-
-def filter_properties(feature):
-  if 'total_area' in feature['properties'] and 'mean_temperature' in feature['properties']:
-    return True
-  else:
-    return False
-
-print(geojson_dict)
