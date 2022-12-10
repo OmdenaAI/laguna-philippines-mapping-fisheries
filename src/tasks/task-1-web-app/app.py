@@ -13,7 +13,7 @@ with st.expander("See source code"):
         m = leafmap.Map(center=[17.879721, 121.774017], zoom=7)
         # cities = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Cities/ph_cities.csv'
         cities = "https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Cities/ph_cities_filtered.csv"
-        regions = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/tasks/task-1-web-app/region_2_results_filtered.geojson'
+        regions = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Cities/region_2_results_filtered.geojson'
 
         m.add_geojson(regions, layer_name='Cluster Map')
         m.add_points_from_xy(
