@@ -1,0 +1,6 @@
+channles:
+  - conda-forge
+dependencies:
+  - streamlit==1.10.0
+  - geopandas==0.12.2
+  - leafmap == 0.14.1

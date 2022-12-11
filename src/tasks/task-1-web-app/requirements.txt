@@ -1,3 +1,0 @@
-streatmlit == 1.10.0
-geopandas
-leafmap == 0.14.1
