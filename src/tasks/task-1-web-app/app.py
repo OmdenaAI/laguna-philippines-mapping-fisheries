@@ -2,6 +2,14 @@ import streamlit as st
 import folium
 import streamlit_folium as stf
 import geopandas as gdf
+import requests
+import json
+
+def formatter(geojson, features):
+    for i in range(len(geojson['features'])):
+        for j in features:
+            geojson['features'][i]['properties'][j] = round(float(geojson['features'][i]['properties'][j]))
+    return geojson
 
 st.set_page_config(layout="wide")
 
@@ -25,7 +33,12 @@ st.title("Map of Fishing Activity Recommendation")
 m = folium.Map(location=[17.879721, 121.774017], zoom_start=7)
 
 regions = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/results/region_2_results_with_recommendation.geojson'
-data = gdf.read_file(regions)
+response = requests.get(regions)
+regions = json.loads(response.content)
+features = ['Recommended Production Value (2022) - Forecasted', 'Recommended Production Volume (2022) - Forecasted']
+
+regions = formatter(regions, features)
+
 
 style_function = lambda feature: {
      "fillColor": "#0000ff"
