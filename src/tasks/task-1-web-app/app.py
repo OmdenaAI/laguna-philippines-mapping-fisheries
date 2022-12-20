@@ -1,11 +1,16 @@
 import streamlit as st
-import leafmap.foliumap as leafmap
+import folium
+import streamlit_folium as stf
+import geopandas as gdf
 
 st.set_page_config(layout="wide")
 
 st.sidebar.title("About")
 
 st.sidebar.title("Contact")
+with st.sidebar.expander("How to use this map "):
+    st.markdown('''### Instructions:
+    1. ''')
 st.sidebar.info(
     '''
     This project is owned by:\n
@@ -16,23 +21,25 @@ st.sidebar.info(
 
 st.title("Map of Fishing Activity Recommendation")
 
-with st.expander("How to use this map "):
-    st.markdown('''### Instructions:
-    1. ''')
 
-m = leafmap.Map(center=[17.879721, 121.774017], zoom=7)
-# cities = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Cities/ph_cities.csv'
-cities = "https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Cities/ph_cities_filtered.csv"
-regions = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/data/Cities/region_2_results_filtered.geojson'
+m = folium.Map(location=[17.879721, 121.774017], zoom_start=7)
 
-m.add_geojson(regions, layer_name='Cluster Map', info_mode="on_click")
-m.add_points_from_xy(
-    cities,
-    x="lng",
-    y="lat",
-    # color_column='region',
-    icon_names=['gear', 'map', 'leaf', 'globe'],
-    spin=True,
-    add_legend=True,
-)
-m.to_streamlit(height=700)
+regions = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/results/region_2_results_with_recommendation.geojson'
+data = gdf.read_file(regions)
+
+style_function = lambda feature: {
+     "fillColor": "#0000ff"
+     if "Increase Fishing Activity" == feature["properties"]['Recommendation']
+     else '#0000ff' 
+     if "Decrease Fishing Activity" == feature["properties"]['Recommendation']
+     else '#0000ff'}
+
+tooltip = folium.features.GeoJsonTooltip(fields=['index','Recommendation',"Recommended Production Value (2022) - Forecasted", "Recommended Production Volume (2022) - Forecasted"], 
+                              aliases = ['Province','Action','Advised Production Value', 'Advised Production Volume'],
+                              labels=True, localize=False)
+
+folium.GeoJson(regions, name='Region 2 Map', control = False,
+                tooltip=tooltip).add_to(m)
+
+
+stf.st_folium(m, width=1000, height=410)
