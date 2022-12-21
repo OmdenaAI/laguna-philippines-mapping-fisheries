@@ -3,22 +3,74 @@ import folium
 import streamlit_folium as stf
 import geopandas as gdf
 import requests
+import webbrowser
 import json
 
+
+#-----Functions------
 def formatter(geojson, features):
     for i in range(len(geojson['features'])):
         for j in features:
             geojson['features'][i]['properties'][j] = round(float(geojson['features'][i]['properties'][j]))
     return geojson
 
-st.set_page_config(layout="wide")
+def color_coding(row):
+    if row.Recommendation == 'Increase Fishing Activity':
+        return ['background-color:lightgreen'] * len(row)
+    elif row.Recommendation == 'Decrease Fishing Activity':
+        return ['background-color:salmon'] * len(row)
+    else:
+        return ['background-color:peachpuff'] * len(row)
 
+    
+#------Page and Element Configs----
+st.title("Fishing Activity Recommender")
+col1, col2 = st.columns(2)
+
+#-----Map Components-----
+regions_raw = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/results/region_2_results_with_recommendation.geojson'
+response = requests.get(regions_raw)
+regions = json.loads(response.content)
+data = gdf.read_file(regions_raw)
+features = ['Recommended Production Value (2022) - Forecasted', 'Recommended Production Volume (2022) - Forecasted']
+data = data[['index','Recommendation']+features]
+data[features] = data[features].astype(float).astype(int)
+data.rename({'Recommended Production Value (2022) - Forecasted':'Recomm Prod Value (per 1000 PhP)',
+             'Recommended Production Volume (2022) - Forecasted':'Recomm Prod Volume (in metric tons)'},
+            axis=1,
+            inplace=True)
+regions = formatter(regions, features)
+
+
+m = folium.Map(location=[18.43959, 121.3991212], zoom_start=6.3, zoom_control=False)
+tooltip = folium.features.GeoJsonTooltip(fields=['index','Recommendation',"Recommended Production Value (2022) - Forecasted", "Recommended Production Volume (2022) - Forecasted"], 
+                              aliases = ['Province','Action','Production Value', 'Production Volume'],
+                              labels=True, localize=True)
+
+folium.GeoJson(regions, name='Region 2 Map', control = False,
+                tooltip=tooltip).add_to(m)
+
+
+#-----Page Building-----
 st.sidebar.title("About")
+st.sidebar.markdown("""This is an open source project created by Omdena Laguna Chapter. The aim being to help connect and encourage organizations to use AI tools to understand and plan how to better utilize the country’s aquatic resources. We also hope to encourage citizen science by open sourcing the dataset and code.""")
+
+st.sidebar.empty()
+
+st.sidebar.title("Details")
+slide_deck = 'https://www.canva.com/design/DAFVZaEBbEo/bI6UGzE9Vh6CPUZMIA51Yg/view?utm_content=DAFVZaEBbEo&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink'
+repo = 'https://github.com/OmdenaAI/laguna-philippines-mapping-fisheries/'
+with st.sidebar:
+    if st.button('Project Presentation'):
+        webbrowser.open_new_tab(slide_deck)
+    if st.button('Project Video'):
+        webbrowser.open_new_tab(slide_deck)
+    if st.button('Project Repository'):
+        webbrowser.open_new_tab(repo)    
+
+st.sidebar.empty()
 
 st.sidebar.title("Contact")
-with st.sidebar.expander("How to use this map "):
-    st.markdown('''### Instructions:
-    1. ''')
 st.sidebar.info(
     '''
     This project is owned by:\n
@@ -27,32 +79,18 @@ st.sidebar.info(
     '''
 )
 
-st.title("Map of Fishing Activity Recommendation")
 
 
-m = folium.Map(location=[17.879721, 121.774017], zoom_start=7)
-
-regions = 'https://raw.githubusercontent.com/OmdenaAI/laguna-philippines-mapping-fisheries/main/src/results/region_2_results_with_recommendation.geojson'
-response = requests.get(regions)
-regions = json.loads(response.content)
-features = ['Recommended Production Value (2022) - Forecasted', 'Recommended Production Volume (2022) - Forecasted']
-
-regions = formatter(regions, features)
-
-
-style_function = lambda feature: {
-     "fillColor": "#0000ff"
-     if "Increase Fishing Activity" == feature["properties"]['Recommendation']
-     else '#0000ff' 
-     if "Decrease Fishing Activity" == feature["properties"]['Recommendation']
-     else '#0000ff'}
-
-tooltip = folium.features.GeoJsonTooltip(fields=['index','Recommendation',"Recommended Production Value (2022) - Forecasted", "Recommended Production Volume (2022) - Forecasted"], 
-                              aliases = ['Province','Action','Advised Production Value', 'Advised Production Volume'],
-                              labels=True, localize=False)
-
-folium.GeoJson(regions, name='Region 2 Map', control = False,
-                tooltip=tooltip).add_to(m)
-
-
-stf.st_folium(m, width=1000, height=410)
+with col1:
+    stf.st_folium(m, width=500, height=300)
+with col2:
+    st.subheader('Recommendation Descriptions')
+    with st.expander('Increase Fishing Activity'):
+        st.success("The recommended production value and volume shows a significant increase. It is advised to increase the fishing activity to leverage higher production and higher valuation")
+    with st.expander('Decrease Fishing Activity'):
+        st.error('The recommended production value and volume shows a significant decrease. It is advised to decrease the fishing actvity to lower the production volume and lower valuation')
+    with st.expander('Increase Fishing Activity (Lower Price)'):
+        st.warning('The recommeded production value and volume shows a slight increase. It is advised to increase the fishing activity but to lower the valuation since the resources and demand can support a higher costing')
+    with st.expander('Increase Fishing Activity (Keep Price)'):
+        st.warning('The recommeded production value and volume shows a slight increase. It is advised to increase the fishing activity but to retain the current valuation')
+st.table(data.style.apply(color_coding, axis=1))
