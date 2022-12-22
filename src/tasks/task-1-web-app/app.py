@@ -59,8 +59,8 @@ st.sidebar.empty()
 
 st.sidebar.title("Details")
 
-st.sidebar.markdown(f"['Project Presentation']({st.secrets['slide_deck']})")
-st.sidebar.markdown(f"['Project Repository']({st.secrets['repo']})")
+st.sidebar.markdown(f"Watch the [Project Presentation]({st.secrets['slide_deck']})")
+st.sidebar.markdown(f"Review the [Project Repository]({st.secrets['repo']})")
 
 st.sidebar.empty()
 
@@ -76,7 +76,7 @@ st.sidebar.info(
 
 
 with col1:
-    stf.st_folium(m, width=500, height=300)
+    stf.st_folium(m, width=500, height=330)
 with col2:
     st.subheader('Recommendation Descriptions')
     with st.expander('Increase Fishing Activity'):
