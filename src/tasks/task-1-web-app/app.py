@@ -59,8 +59,8 @@ st.sidebar.empty()
 
 st.sidebar.title("Details")
 
-st.sidebar.markdown(['Project Presentation'](st.secrets['slide_deck']))
-st.sidebar.markdown(['Project Repository'](st.secrets['repo']))
+st.sidebar.markdown(f"['Project Presentation']({st.secrets['slide_deck']})")
+st.sidebar.markdown(f"['Project Repository']({st.secrets['repo']})")
 
 st.sidebar.empty()
 
