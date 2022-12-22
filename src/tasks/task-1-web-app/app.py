@@ -57,8 +57,6 @@ st.sidebar.markdown("""This is an open source project created by Omdena Laguna C
 
 st.sidebar.empty()
 
-st.sidebar.title("Details")
-
 st.sidebar.markdown(f"Watch the [Project Presentation]({st.secrets['slide_deck']})")
 st.sidebar.markdown(f"Review the [Project Repository]({st.secrets['repo']})")
 
@@ -84,7 +82,7 @@ with col2:
     with st.expander('Decrease Fishing Activity'):
         st.error('The recommended production value and volume shows a significant decrease. It is advised to decrease the fishing actvity to lower the production volume and lower valuation')
     with st.expander('Increase Fishing Activity (Lower Price)'):
-        st.warning('The recommeded production value and volume shows a slight increase. It is advised to increase the fishing activity but to lower the valuation since the resources and demand can support a higher costing')
+        st.warning('The recommeded production value and volume shows a slight increase. It is advised to increase the fishing activity but to lower the valuation since the resources can support higher demand for lower valuation.')
     with st.expander('Increase Fishing Activity (Keep Price)'):
         st.warning('The recommeded production value and volume shows a slight increase. It is advised to increase the fishing activity but to retain the current valuation')
 st.table(data.style.apply(color_coding, axis=1))
