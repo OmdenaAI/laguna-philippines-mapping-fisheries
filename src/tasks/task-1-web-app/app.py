@@ -58,15 +58,9 @@ st.sidebar.markdown("""This is an open source project created by Omdena Laguna C
 st.sidebar.empty()
 
 st.sidebar.title("Details")
-slide_deck = 'https://www.canva.com/design/DAFVZaEBbEo/bI6UGzE9Vh6CPUZMIA51Yg/view?utm_content=DAFVZaEBbEo&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink'
-repo = 'https://github.com/OmdenaAI/laguna-philippines-mapping-fisheries/'
-with st.sidebar:
-    if st.button('Project Presentation'):
-        webbrowser.open_new_tab(slide_deck)
-    if st.button('Project Video'):
-        webbrowser.open_new_tab(slide_deck)
-    if st.button('Project Repository'):
-        webbrowser.open_new_tab(repo)    
+
+st.sidebar.markdown(['Project Presentation'](st.secrets['slide_deck']))
+st.sidebar.markdown(['Project Repository'](st.secrets['repo']))
 
 st.sidebar.empty()
 
