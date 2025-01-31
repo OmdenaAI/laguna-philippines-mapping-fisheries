@@ -1,4 +1,5 @@
-streamlit==1.11.0
-geopandas
+streamlit==1.37.0
 folium
 streamlit-folium
+geopandas
+altair<5
